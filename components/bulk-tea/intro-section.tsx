@@ -1,0 +1,44 @@
+'use client';
+
+export default function BulkTeaIntro() {
+  return (
+    <section className="py-20 md:py-32 px-4 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Text Content */}
+          <div className="space-y-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
+              Bulk Tea
+            </h1>
+            
+            <h2 className="text-2xl md:text-3xl font-light text-gray-700">
+              Wholesale tea for bulk buyers.
+            </h2>
+            
+            <div className="space-y-4">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                <strong>We can export Wholesale supply of Tea</strong> in raw form, blended to your brands taste, or infused as per your requirement. Most tea companies who have their own packaging plants often opt to buy tea in bulk. However for your convenience we also provide full product manufacturing solutions as well.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column - Video */}
+          <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl group cursor-pointer">
+            <img 
+              src="https://venturetea.com/wp-content/uploads/2025/05/stills-tea-warehouse-in-venture-tea-9.jpg.webp"
+              alt="tea warehouse at venture tea, pure ceylon tea, wholesale and bulk tea exporter, private tea label, largest tea exporter"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all flex items-center justify-center">
+              <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg className="w-10 h-10 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
