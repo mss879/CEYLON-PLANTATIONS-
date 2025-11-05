@@ -99,12 +99,9 @@ export default function Navbar() {
                   onMouseEnter={() => item.submenu && setOpenDropdown(item.name)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  <Link
-                    href={item.href}
-                    className="text-white hover:text-white/80 transition-colors duration-200 font-medium"
-                  >
-                    {item.name}
-                    {item.submenu && (
+                  {item.submenu ? (
+                    <span className="text-white hover:text-white/80 transition-colors duration-200 font-medium cursor-default">
+                      {item.name}
                       <svg 
                         className="inline-block ml-1 w-4 h-4" 
                         fill="none" 
@@ -113,8 +110,15 @@ export default function Navbar() {
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
-                    )}
-                  </Link>
+                    </span>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-white hover:text-white/80 transition-colors duration-200 font-medium"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                   
                   {/* Dropdown menu */}
                   {item.submenu && openDropdown === item.name && (
@@ -171,13 +175,9 @@ export default function Navbar() {
             <ul className="flex flex-col gap-2">
               {menuItems.map((item) => (
                 <li key={item.name} className="border-b border-white/10 last:border-0">
-                  <Link
-                    href={item.href}
-                    className="text-white hover:text-white/80 transition-colors duration-200 font-medium block py-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                    {item.submenu && (
+                  {item.submenu ? (
+                    <span className="text-white hover:text-white/80 transition-colors duration-200 font-medium block py-2 cursor-default">
+                      {item.name}
                       <svg 
                         className="inline-block ml-1 w-4 h-4" 
                         fill="none" 
@@ -186,8 +186,16 @@ export default function Navbar() {
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
-                    )}
-                  </Link>
+                    </span>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-white hover:text-white/80 transition-colors duration-200 font-medium block py-2"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                   {item.submenu && (
                     <ul className="pl-4 pb-2">
                       {item.submenu.map((subitem) => (
