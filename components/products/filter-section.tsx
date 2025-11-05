@@ -85,7 +85,7 @@ export default function FilterSection({ onFilterChange }: FilterSectionProps) {
   ];
 
   return (
-    <div className="space-y-4 md:space-y-6">
+    <div className="grid grid-cols-2 lg:grid-cols-1 gap-3 md:gap-4 lg:gap-6">
       {/* Product Categories */}
       <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 md:p-4">
         <h3 className="text-black font-semibold mb-2 md:mb-3 text-xs md:text-sm tracking-tight">
