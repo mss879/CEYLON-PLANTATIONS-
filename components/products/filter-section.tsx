@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronDown, ChevronUp, SlidersHorizontal } from "lucide-react";
 
 interface FilterOption {
   value: string;
@@ -12,6 +13,7 @@ interface FilterSectionProps {
 }
 
 export default function FilterSection({ onFilterChange }: FilterSectionProps) {
+  const [isOpen, setIsOpen] = useState(false);
   const [category, setCategory] = useState("");
   const [typeOfTea, setTypeOfTea] = useState("");
   const [flavour, setFlavour] = useState("");
@@ -85,27 +87,46 @@ export default function FilterSection({ onFilterChange }: FilterSectionProps) {
   ];
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-1 gap-3 md:gap-4 lg:gap-6">
-      {/* Product Categories */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 md:p-4">
-        <h3 className="text-black font-semibold mb-2 md:mb-3 text-xs md:text-sm tracking-tight">
-          Product categories
-        </h3>
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 md:px-4 md:py-2.5 text-black text-xs md:text-sm focus:outline-none focus:border-gray-500 transition-colors"
-        >
-          <option value="">Select all</option>
-          {categories.map((cat) => (
-            <option key={cat.value} value={cat.value}>
-              {cat.label}
-            </option>
-          ))}
-        </select>
-      </div>
+    <div>
+      {/* Mobile Filter Toggle Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="lg:hidden w-full bg-black text-white px-4 py-3 rounded-lg font-semibold text-sm flex items-center justify-between mb-4 hover:bg-gray-800 transition-colors"
+      >
+        <span className="flex items-center gap-2">
+          <SlidersHorizontal className="w-4 h-4" />
+          Filters
+        </span>
+        {isOpen ? (
+          <ChevronUp className="w-5 h-5" />
+        ) : (
+          <ChevronDown className="w-5 h-5" />
+        )}
+      </button>
 
-      {/* Type of Tea */}
+      {/* Filter Grid - Hidden on mobile unless open */}
+      <div className={`${isOpen ? 'block' : 'hidden'} lg:block`}>
+        <div className="grid grid-cols-2 lg:grid-cols-1 gap-3 md:gap-4 lg:gap-6">
+          {/* Product Categories */}
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 md:p-4">
+            <h3 className="text-black font-semibold mb-2 md:mb-3 text-xs md:text-sm tracking-tight">
+              Product categories
+            </h3>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 md:px-4 md:py-2.5 text-black text-xs md:text-sm focus:outline-none focus:border-gray-500 transition-colors"
+            >
+              <option value="">Select all</option>
+              {categories.map((cat) => (
+                <option key={cat.value} value={cat.value}>
+                  {cat.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Type of Tea */}
       <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 md:p-4">
         <h3 className="text-black font-semibold mb-2 md:mb-3 text-xs md:text-sm tracking-tight">
           Type of Tea
@@ -198,6 +219,8 @@ export default function FilterSection({ onFilterChange }: FilterSectionProps) {
             </option>
           ))}
         </select>
+      </div>
+        </div>
       </div>
     </div>
   );
