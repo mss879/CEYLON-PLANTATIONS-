@@ -41,6 +41,7 @@ export default function Navbar() {
         { name: "CO-PACKING TEA", href: "/b2b-services/co-packing" },
       ]
     },
+    { name: "Products", href: "/products" },
     { 
       name: "About", 
       href: "/about",
