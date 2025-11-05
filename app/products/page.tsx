@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import FilterSection from "@/components/products/filter-section";
 import ProductGrid from "@/components/products/product-grid";
 
@@ -9,7 +8,7 @@ export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+      <section className="relative pt-32 pb-8 md:pt-40 md:pb-12 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div
@@ -22,29 +21,12 @@ export default function ProductsPage() {
         </div>
 
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-          {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex justify-center mb-12"
-          >
-            <Image
-              src="/logo.png"
-              alt="Tarlton Logo"
-              width={300}
-              height={160}
-              className="h-20 md:h-24 w-auto"
-              priority
-            />
-          </motion.div>
-
           {/* Title */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-center mb-8"
+            transition={{ duration: 0.6 }}
+            className="text-center"
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black tracking-tight mb-4">
               Our Products
@@ -57,9 +39,9 @@ export default function ProductsPage() {
       </section>
 
       {/* Products Section */}
-      <section className="relative py-12 md:py-16">
+      <section className="relative py-8 md:py-12">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-4 gap-8">
+          <div className="grid lg:grid-cols-4 gap-6 md:gap-8">
             {/* Filters Sidebar */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}

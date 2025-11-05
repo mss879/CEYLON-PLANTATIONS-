@@ -85,16 +85,16 @@ export default function FilterSection({ onFilterChange }: FilterSectionProps) {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Product Categories */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-        <h3 className="text-black font-semibold mb-3 text-sm tracking-tight">
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 md:p-4">
+        <h3 className="text-black font-semibold mb-2 md:mb-3 text-xs md:text-sm tracking-tight">
           Product categories
         </h3>
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 text-black text-sm focus:outline-none focus:border-gray-500 transition-colors"
+          className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 md:px-4 md:py-2.5 text-black text-xs md:text-sm focus:outline-none focus:border-gray-500 transition-colors"
         >
           <option value="">Select all</option>
           {categories.map((cat) => (
@@ -106,14 +106,14 @@ export default function FilterSection({ onFilterChange }: FilterSectionProps) {
       </div>
 
       {/* Type of Tea */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-        <h3 className="text-black font-semibold mb-3 text-sm tracking-tight">
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 md:p-4">
+        <h3 className="text-black font-semibold mb-2 md:mb-3 text-xs md:text-sm tracking-tight">
           Type of Tea
         </h3>
         <select
           value={typeOfTea}
           onChange={(e) => setTypeOfTea(e.target.value)}
-          className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 text-black text-sm focus:outline-none focus:border-gray-500 transition-colors"
+          className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 md:px-4 md:py-2.5 text-black text-xs md:text-sm focus:outline-none focus:border-gray-500 transition-colors"
         >
           <option value="">Select all</option>
           {teaTypes.map((type) => (
@@ -125,14 +125,14 @@ export default function FilterSection({ onFilterChange }: FilterSectionProps) {
       </div>
 
       {/* Flavour of Tea */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-        <h3 className="text-black font-semibold mb-3 text-sm tracking-tight">
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 md:p-4">
+        <h3 className="text-black font-semibold mb-2 md:mb-3 text-xs md:text-sm tracking-tight">
           Flavour of Tea
         </h3>
         <select
           value={flavour}
           onChange={(e) => setFlavour(e.target.value)}
-          className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 text-black text-sm focus:outline-none focus:border-gray-500 transition-colors"
+          className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 md:px-4 md:py-2.5 text-black text-xs md:text-sm focus:outline-none focus:border-gray-500 transition-colors"
         >
           <option value="">Select all</option>
           {flavours.map((f) => (
@@ -144,14 +144,14 @@ export default function FilterSection({ onFilterChange }: FilterSectionProps) {
       </div>
 
       {/* Herbs & Spices */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-        <h3 className="text-black font-semibold mb-3 text-sm tracking-tight">
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 md:p-4">
+        <h3 className="text-black font-semibold mb-2 md:mb-3 text-xs md:text-sm tracking-tight">
           Herbs &amp; Spices
         </h3>
         <select
           value={herbsSpices}
           onChange={(e) => setHerbsSpices(e.target.value)}
-          className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 text-black text-sm focus:outline-none focus:border-gray-500 transition-colors"
+          className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 md:px-4 md:py-2.5 text-black text-xs md:text-sm focus:outline-none focus:border-gray-500 transition-colors"
         >
           <option value="">Select all</option>
           {herbsSpicesOptions.map((herb) => (
@@ -163,14 +163,14 @@ export default function FilterSection({ onFilterChange }: FilterSectionProps) {
       </div>
 
       {/* Tea Grade */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-        <h3 className="text-black font-semibold mb-3 text-sm tracking-tight">
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 md:p-4">
+        <h3 className="text-black font-semibold mb-2 md:mb-3 text-xs md:text-sm tracking-tight">
           Tea Grade
         </h3>
         <select
           value={teaGrade}
           onChange={(e) => setTeaGrade(e.target.value)}
-          className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 text-black text-sm focus:outline-none focus:border-gray-500 transition-colors"
+          className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 md:px-4 md:py-2.5 text-black text-xs md:text-sm focus:outline-none focus:border-gray-500 transition-colors"
         >
           <option value="">Select all</option>
           {teaGrades.map((grade) => (
@@ -182,14 +182,14 @@ export default function FilterSection({ onFilterChange }: FilterSectionProps) {
       </div>
 
       {/* Tea Packing Form */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-        <h3 className="text-black font-semibold mb-3 text-sm tracking-tight">
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 md:p-4">
+        <h3 className="text-black font-semibold mb-2 md:mb-3 text-xs md:text-sm tracking-tight">
           Tea Packing Form
         </h3>
         <select
           value={packingForm}
           onChange={(e) => setPackingForm(e.target.value)}
-          className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 text-black text-sm focus:outline-none focus:border-gray-500 transition-colors"
+          className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 md:px-4 md:py-2.5 text-black text-xs md:text-sm focus:outline-none focus:border-gray-500 transition-colors"
         >
           <option value="">Select all</option>
           {packingForms.map((form) => (
